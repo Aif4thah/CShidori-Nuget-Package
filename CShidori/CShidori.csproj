@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>CShidori</PackageId>
+    <Version>1.0.2</Version>
+    <Authors>m.vacarella</Authors>
+    <Company>taisen-solutions</Company>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
+    <None Include="README.md" Pack="true" PackagePath="README.md"/>
+  </ItemGroup>
+
+
+</Project>
