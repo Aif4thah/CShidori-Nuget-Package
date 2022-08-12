@@ -2,7 +2,9 @@
 
 ## 1024 Birds to your fuzzer
 
-![Banner](https://github.com/Aif4thah/CShidori/blob/main/CShidori.png)
+* [Nuget Package](https://www.nuget.org/packages/CShidori/)
+
+![Banner](CShidori/CShidori.png)
 
 ## How use it ?
 
@@ -12,4 +14,4 @@ The best way to use CShidori is to give him the intended input and generate data
 
 This package can be use direclty in Unit Tests or with your favorite security tool.
 
-You can find a [Demonstration Here](https://github.com/Aif4thah/CShidori)
+You can find a [Demonstration Here](https://github.com/Aif4thah/CShidori).

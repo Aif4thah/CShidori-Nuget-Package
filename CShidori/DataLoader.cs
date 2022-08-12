@@ -19,10 +19,8 @@ namespace CShidori.DataHandler
             {
                 IEnumerable<string> FileNames = from f in FileList where f.EndsWith(s) select f;
                 foreach (string FileName in FileNames)
-                {
                     foreach (string line in File.ReadAllLines(FileName))
                         results.Add(line);
-                }
             }
             BadStrings.Output = d.EndsWith("Template") ? results : EncodeStrings.encodebadchars(results); //EncodeStrings.encodebadchars contains results.Distinct().ToList();
         }
