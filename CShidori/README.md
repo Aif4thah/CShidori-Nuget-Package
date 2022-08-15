@@ -10,3 +10,8 @@ This package can be used direclty in Unit Tests or with a C# script alongside yo
 
 * Source code: [GitHub](https://github.com/Aif4thah/CShidori-Nuget-Package)
 
+## Love CShidori ? 
+
+Help me to keep Cshidori free and open-source
+
+* [Ethereum Donation](https://etherscan.io/address/0xcC424e30Ff6eEAb4E6B3A900c5446038F858b314)
