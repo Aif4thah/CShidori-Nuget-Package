@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>CShidori</PackageId>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Authors>m.vacarella</Authors>
     <Company>taisen-solutions</Company>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
