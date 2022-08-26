@@ -1,19 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>CShidori</PackageId>
-    <Version>1.0.5</Version>
-    <Authors>m.vacarella</Authors>
-    <Company>taisen-solutions</Company>
+    <Version>1.0.5-beta1</Version> <!--https://docs.microsoft.com/fr-fr/nuget/create-packages/prerelease-packages-->
+    <Authors>Michael Vacarella</Authors>
+    <Company>Taisen-Solutions</Company>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-
   </PropertyGroup>
 
   <ItemGroup>

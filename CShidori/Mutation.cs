@@ -77,7 +77,7 @@ namespace CShidori.Core
             RandomNumberGenerator.Create().GetBytes(ByteRange);
 
             bytes[randvalue] = ByteRange[0];
-            bytes[randvalue+1] = ByteRange[1];
+            bytes[randvalue + 1] = ByteRange[1];
             bytes[randvalue + 2] = ByteRange[2];
 
             return Encoding.UTF8.GetString(bytes);

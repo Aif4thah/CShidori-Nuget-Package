@@ -10,29 +10,28 @@ namespace CShidori.Core
 {
     public static class EncodeStrings
     {
-        public static List<string> encodebadchars(List<string> inputs)
+        public static void EncodeBadStrings()        
         {
-            List<string> results = new List<string>();
-            results.AddRange(inputs);
-            foreach (string input in inputs)
+            List<string> NotEncoded = BadStrings.Output.ToList();
+            foreach (string input in NotEncoded)
             {
-                results.Add(Uri.EscapeDataString(input));
-                results.Add(HttpUtility.UrlEncode(input));
-                results.Add(HttpUtility.UrlEncodeUnicode(input));
-                results.Add(HttpUtility.HtmlEncode(input));
-                results.Add(Convert.ToBase64String(Encoding.UTF8.GetBytes(input)));
+                BadStrings.Output.Add(Uri.EscapeDataString(input));
+                BadStrings.Output.Add(HttpUtility.UrlEncode(input));
+                BadStrings.Output.Add(HttpUtility.UrlEncodeUnicode(input));
+                BadStrings.Output.Add(HttpUtility.HtmlEncode(input));
+                BadStrings.Output.Add(Convert.ToBase64String(Encoding.UTF8.GetBytes(input)));
 
                 //Escape quotes
-                results.Add(EscapeQuotes(input));
+                BadStrings.Output.Add(EscapeQuotes(input));
 
                 //hexEscape
-                results.Add(HexEscapeString(input));
+                BadStrings.Output.Add(HexEscapeString(input));
 
                 //html ascii:
-                results.Add(AsciiEncode(input));
-                results.Add(AsciiHexEncode(input));
+                BadStrings.Output.Add(AsciiEncode(input));
+                BadStrings.Output.Add(AsciiHexEncode(input));
             }
-            return results.Distinct().ToList();
+            BadStrings.Output.Distinct().ToList();
 
         }
 
