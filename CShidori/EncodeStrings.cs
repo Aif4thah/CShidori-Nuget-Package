@@ -12,8 +12,7 @@ namespace CShidori.Core
     {
         public static void EncodeBadStrings()        
         {
-            List<string> NotEncoded = BadStrings.Output.ToList();
-            foreach (string input in NotEncoded)
+            foreach (string input in BadStrings.Output.ToList())
             {
                 BadStrings.Output.Add(Uri.EscapeDataString(input));
                 BadStrings.Output.Add(HttpUtility.UrlEncode(input));

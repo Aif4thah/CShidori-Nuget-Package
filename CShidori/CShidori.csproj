@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>CShidori</PackageId>
-    <Version>1.0.5-beta1</Version> <!--https://docs.microsoft.com/fr-fr/nuget/create-packages/prerelease-packages-->
+    <Version>1.0.5</Version>
     <Authors>Michael Vacarella</Authors>
     <Company>Taisen-Solutions</Company>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
