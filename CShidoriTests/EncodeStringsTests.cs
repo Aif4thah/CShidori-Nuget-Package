@@ -16,10 +16,27 @@ namespace CShidori.Core.Tests
         [TestMethod()]
         public void EncodeStringTest()
         {
-            int DefaultList = BadStrings.Output.Count;
+            int DefaultListCount = BadStrings.Output.Count;
             EncodeStrings.EncodeBadStrings();
-            Assert.IsTrue(DefaultList < BadStrings.Output.Count);
+            Assert.IsTrue(DefaultListCount < BadStrings.Output.Count);
 
+        }
+
+        [TestMethod()]
+        public void EncodeStringFuzz()
+        {
+            MutDispatcher result = new MutDispatcher(4096, Misc.RandomString(20));
+
+            BadStrings.Output.Clear();
+            Assert.IsTrue(BadStrings.Output.Count == 0 && result.Output.Count > 0);
+
+            foreach ( string Mutation in result.Output)
+            {
+                BadStrings.Output.Add(Mutation);
+                System.Diagnostics.Trace.WriteLine(Mutation);
+                EncodeStrings.EncodeBadStrings(); //  <-- test de la fonction
+                BadStrings.Output.Clear();
+            }
         }
 
     }

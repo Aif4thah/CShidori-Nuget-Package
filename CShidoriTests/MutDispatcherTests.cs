@@ -26,10 +26,8 @@ namespace CShidori.Core.Tests
         [TestMethod()]
         public void MutationFuzz()
         {
-            int o = 4096;
-            string p = Misc.RandomString(10);
-            MutDispatcher result = new MutDispatcher(o, p);
-            result.Output.ForEach(x => new MutDispatcher(o, x));
+            MutDispatcher result = new MutDispatcher(1024, Misc.RandomString(10));
+            result.Output.ForEach(x => new MutDispatcher(1024, x));
 
         }
 

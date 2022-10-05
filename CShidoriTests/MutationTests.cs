@@ -20,7 +20,7 @@ namespace CShidori.Core.Tests
         {
             string p = Misc.RandomString(10);
             string result = Mutation.RepRandBc(p);
-            Console.WriteLine("result: {0} and p = {1}", result, p);
+            System.Diagnostics.Trace.WriteLine(p);
             Assert.IsTrue(result.Length >= p.Length && result != p);
         }
 
@@ -29,7 +29,7 @@ namespace CShidori.Core.Tests
         {
             string p = Misc.RandomString(10);
             string result = Mutation.AddRandBc(p);
-            Console.WriteLine("result: {0} and p = {1}", result, p);
+            System.Diagnostics.Trace.WriteLine(p);
             Assert.IsTrue(result.Length > p.Length);
         }
 
@@ -42,7 +42,7 @@ namespace CShidori.Core.Tests
             line3
             ";
             string result = Mutation.RepLine(p);
-            Console.WriteLine("result: {0} and p = {1}", result, p);
+            System.Diagnostics.Trace.WriteLine(p);
             Assert.IsTrue(result != String.Empty && result != p);
         }
 
@@ -51,7 +51,7 @@ namespace CShidori.Core.Tests
         {
             string p = Misc.RandomString(10);
             string result = Mutation.DelChar(p);
-            Console.WriteLine("result: {0} and p = {1}", result, p);
+            System.Diagnostics.Trace.WriteLine(p);
             Assert.IsTrue(result != String.Empty && result.Length < p.Length);
         }
 
@@ -60,7 +60,7 @@ namespace CShidori.Core.Tests
         {
             string p = Misc.RandomString(10);
             string result = Mutation.BitFlip(p);
-            Console.WriteLine("result: {0} and p = {1}", result, p);
+            System.Diagnostics.Trace.WriteLine(p);
             Assert.IsTrue(result != p && result.Length == p.Length);
         }
 
@@ -69,7 +69,7 @@ namespace CShidori.Core.Tests
         {
             string p = Misc.RandomString(10);
             string result = Mutation.RepThreeBytes(p);
-            Console.WriteLine("p = {0} and result: {1}\nLength p: {2} and result {3}", p, result, Encoding.UTF8.GetBytes(p).Length, Encoding.UTF8.GetBytes(result).Length);
+            System.Diagnostics.Trace.WriteLine(p);
             Assert.IsTrue(result != p);
         }
 
@@ -78,7 +78,7 @@ namespace CShidori.Core.Tests
         {
             string p = Misc.RandomString(10);
             string result = Mutation.RepeatStr(p);
-            Console.WriteLine("result: {0} and p = {1}", result, p);
+            System.Diagnostics.Trace.WriteLine(p);
             Assert.IsTrue(result.Length >= p.Length);            
         }
     }
