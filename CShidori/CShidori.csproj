@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>CShidori</PackageId>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <Authors>Michael Vacarella</Authors>
     <Company>Taisen-Solutions</Company>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -15,8 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
-    <None Include="README.md" Pack="true" PackagePath="README.md"/>
+    <None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
+    <None Include="README.md" Pack="true" PackagePath="README.md" />
+    <None Include="HowUseIt.png" Pack="true" PackagePath="HowUseIt.png" />
   </ItemGroup>
 
 

@@ -10,6 +10,7 @@ namespace CShidori.DataHandler
 {
     public class DataLoader
     {
+        //data loaded in BadStrings class and used during mutation 
         public DataLoader(string DataPath, string DataFiles)
         {
             List<string> results = new List<string>();

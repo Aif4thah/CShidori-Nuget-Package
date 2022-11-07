@@ -16,8 +16,11 @@ namespace CShidori.Core.Tests
         [TestMethod()]
         public void EncodeStringTest()
         {
+            BadStrings.Output.Add("aaaa");
             int DefaultListCount = BadStrings.Output.Count;
+            System.Diagnostics.Trace.WriteLine(DefaultListCount.ToString());
             EncodeStrings.EncodeBadStrings();
+            System.Diagnostics.Trace.WriteLine(BadStrings.Output.Count.ToString());
             Assert.IsTrue(DefaultListCount < BadStrings.Output.Count);
 
         }
@@ -36,7 +39,10 @@ namespace CShidori.Core.Tests
                 System.Diagnostics.Trace.WriteLine(Mutation);
                 EncodeStrings.EncodeBadStrings(); //  <-- test de la fonction
                 BadStrings.Output.Clear();
+                
             }
+            BadStrings.Output.Add("aaaa");
+            Assert.IsTrue(BadStrings.Output.Count == 1);
         }
 
     }

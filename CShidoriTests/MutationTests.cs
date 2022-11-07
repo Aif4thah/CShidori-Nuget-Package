@@ -58,19 +58,22 @@ namespace CShidori.Core.Tests
         [TestMethod()]
         public void BitFlipTest()
         {
-            string p = Misc.RandomString(10);
-            string result = Mutation.BitFlip(p);
-            System.Diagnostics.Trace.WriteLine(p);
-            Assert.IsTrue(result != p && result.Length == p.Length);
+            byte[] b = Encoding.UTF8.GetBytes("aaaaa");
+            byte[] result = Mutation.BitFlip(b.ToArray());
+            System.Diagnostics.Trace.WriteLine(Encoding.UTF8.GetString(b));
+            System.Diagnostics.Trace.WriteLine(Encoding.UTF8.GetString(result));
+            Assert.IsTrue(result != b && result.Length == b.Length);
         }
 
+
         [TestMethod()]
-        public void RepThreeBytesTest()
+        public void RepBytesTest()
         {
-            string p = Misc.RandomString(10);
-            string result = Mutation.RepThreeBytes(p);
-            System.Diagnostics.Trace.WriteLine(p);
-            Assert.IsTrue(result != p);
+            byte[] b = Encoding.UTF8.GetBytes("aaaaa");
+            System.Diagnostics.Trace.WriteLine(Encoding.UTF8.GetString(b));
+            byte[] result = Mutation.RepBytes(b.ToArray());
+            System.Diagnostics.Trace.WriteLine(Encoding.UTF8.GetString(result));
+            Assert.IsTrue(result != b);
         }
 
         [TestMethod()]

@@ -9,7 +9,7 @@ namespace CShidori.Core
 {
     public static class BadStrings
     {
-        
+
         public static List<string> Output {get;set;} = new List<string> { // default list, when DataLoader is not called
             string.Empty,
             System.Environment.NewLine,

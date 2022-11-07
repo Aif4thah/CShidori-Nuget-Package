@@ -51,9 +51,8 @@ namespace CShidori.Core
             return sb.Remove(randvalue, 1).ToString();
         }
 
-        public static string BitFlip(string p)
+        public static byte[] BitFlip(byte[] bytes)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(p);
             byte[] bitW = { 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80 };
 
             int randvalue = RandomNumberGenerator.GetInt32(bytes.Length);
@@ -62,26 +61,28 @@ namespace CShidori.Core
             try { bytes[randvalue] += bitW[randbit]; }
             catch { bytes[randvalue] -= bitW[randbit]; }
 
-            return Encoding.UTF8.GetString(bytes);
+            return bytes;
         }
 
 
-        public static string RepThreeBytes(string p)
+        public static byte[] RepBytes(byte[] bytes)
         {
-            if(p.Length < 3){ p += Misc.RandomString(3); }
-
-            byte[] bytes = Encoding.UTF8.GetBytes(p);
-            byte[] ByteRange = new Byte[3];
+            int byteLength = RandomNumberGenerator.GetInt32(4);
+            if (bytes.Length < byteLength)
+            {
+                bytes.Concat(Encoding.UTF8.GetBytes(Misc.RandomString(byteLength-1)));
+            }
+            byte[] ByteRange = new byte[byteLength];
 
             int randvalue = RandomNumberGenerator.GetInt32(bytes.Length - 2);
             RandomNumberGenerator.Create().GetBytes(ByteRange);
 
-            bytes[randvalue] = ByteRange[0];
-            bytes[randvalue + 1] = ByteRange[1];
-            bytes[randvalue + 2] = ByteRange[2];
+            for(int i = 0; i < byteLength; i++)
+                bytes[randvalue + i] = ByteRange[i];
 
-            return Encoding.UTF8.GetString(bytes);
+            return bytes;
         }
+
 
         public static string RepeatStr(string p)
         {
