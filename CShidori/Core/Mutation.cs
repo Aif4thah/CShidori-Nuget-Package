@@ -67,8 +67,8 @@ namespace CShidori.Core
 
         public static byte[] RepBytes(byte[] bytes)
         {
-            int byteLength = RandomNumberGenerator.GetInt32(4);
-            if (bytes.Length < byteLength)
+            int byteLength = RandomNumberGenerator.GetInt32(1,4);
+            if (bytes.Length <= byteLength)
             {
                 bytes.Concat(Encoding.UTF8.GetBytes(Misc.RandomString(byteLength-1)));
             }
