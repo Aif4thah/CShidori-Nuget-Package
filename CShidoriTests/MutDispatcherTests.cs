@@ -27,7 +27,13 @@ namespace CShidori.Core.Tests
         public void MutationFuzz()
         {
             MutDispatcher result = new MutDispatcher(1024, Misc.RandomString(10));
-            result.Output.ForEach(x => new MutDispatcher(1024, x));
+            foreach (string r in result.Output)
+            {
+                System.Diagnostics.Trace.WriteLine(r);
+                new MutDispatcher(i: r);
+            }
+
+
 
         }
 
