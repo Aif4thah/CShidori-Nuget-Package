@@ -14,7 +14,7 @@ namespace CShidori.Core
 
         public MutDispatcher(int n = 1, string i = "", byte[] b = null )
         {
-            if ("" != i)
+            if ("" != i && null != i)
             {
                 this.Output = new List<string>();
                 while(0 < n)

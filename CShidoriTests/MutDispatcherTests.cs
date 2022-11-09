@@ -15,11 +15,23 @@ namespace CShidori.Core.Tests
         [TestMethod()]
         public void MutDispatcherTest()
         {
-
+            MutDispatcher result;
             int o = 10;
-            string p = Misc.RandomString(10);
-            MutDispatcher result = new MutDispatcher(o, p);
-            Assert.IsTrue(result.Output.Count == o);
+            List<string> list = new List<string>() 
+            {
+                Misc.RandomString(1), Misc.RandomString(10), Misc.RandomString(100),
+            };
+
+            foreach(string s in list)
+            {
+                result = new MutDispatcher(o, s);
+                System.Diagnostics.Trace.WriteLine(s + " -> " + result.Output.FirstOrDefault());
+                Assert.IsTrue(result.Output.Count == o && result.Output.FirstOrDefault() != s);
+            }
+
+            
+
+
 
         }
 

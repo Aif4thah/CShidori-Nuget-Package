@@ -67,17 +67,20 @@ namespace CShidori.Core
 
         public static byte[] RepBytes(byte[] bytes)
         {
-            try
-            {
-                int byteLength = RandomNumberGenerator.GetInt32(1, 4);
-                int randvalue = RandomNumberGenerator.GetInt32(bytes.Length - byteLength - 1);
-                byte[] ByteRange = RandomNumberGenerator.GetBytes(byteLength + 1);
 
-                for (int i = 0; i < byteLength; i++)
-                    bytes[randvalue + i] = ByteRange[i];
-            }catch(Exception e)
+            int randLength = RandomNumberGenerator.GetInt32(1, 4);
+
+            if(bytes.Length <= randLength)
             {
-                System.Diagnostics.Debug.WriteLine(e);
+                bytes = RandomNumberGenerator.GetBytes(randLength);
+            }
+            else
+            {
+                int randvalue = RandomNumberGenerator.GetInt32(bytes.Length - randLength);
+                byte[] RandBytes = RandomNumberGenerator.GetBytes(randLength);
+
+                for (int i = 0; i < randLength; i++)
+                    bytes[randvalue + i] = RandBytes[i];
             }
 
 
