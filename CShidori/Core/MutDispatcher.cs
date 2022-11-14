@@ -20,7 +20,7 @@ namespace CShidori.Core
                 while(0 < n)
                 {
                     n -= 1;
-                    int rng = RandomNumberGenerator.GetInt32(10);
+                    int rng = RandomNumberGenerator.GetInt32(15);
                     
                     switch(rng)
                     {
